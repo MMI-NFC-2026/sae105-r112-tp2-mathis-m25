@@ -1,1 +1,51 @@
-/* code css à faire */
+/* Définition de l'apparence initiale du menu */
+.menu {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  transition: 4000ms allow-discrete;
+  opacity: 0;
+}
+
+/* Désactivation du défilement de la page lorsque le menu est ouvert */
+html:has(.menu:popover-open) {
+  overflow: hidden;
+}
+
+/* Modification du curseur au survol du bouton burger */
+.burger {
+  cursor: pointer;
+}
+
+/* Gestion de l'opacité du menu lorsqu'il est ouvert */
+.menu:popover-open {
+  opacity: 1;
+}
+
+/* Définition de l'état initial de l'animation d'ouverture */
+@starting-style {
+  .menu:popover-open {
+    opacity: 0;
+  }
+}
+
+/* Définition de la position initiale de l'icône de fermeture */
+@starting-style {
+  .menu:popover-open .burger--close {
+    transform: none;
+  }
+}
+
+/* Rotation de l'icône de fermeture lors de l'ouverture du menu */
+.menu:popover-open .burger--close {
+  transform: rotate(90deg);
+  transition: 400ms;
+}
+
+/* Désactivation des animations si l'utilisateur préfère réduire les mouvements */
+@media (prefers-reduced-motion: reduce) {
+  .menu,
+  .menu .burger--close {
+    transition: none;
+  }
+}
