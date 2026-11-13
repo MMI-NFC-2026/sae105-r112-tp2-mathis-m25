@@ -1,0 +1,16 @@
+.media--fullwidth {
+    width: 100%;
+    height: auto;
+}
+
+nav > h4::before {
+    content: url("../../public/icones/BasilShoppingBasketSolid.svg");
+}
+
+nav > ul > li > a::before {
+    content: url("../../public/icones/HeroiconsSolidArchive.svg");
+}
+
+nav > ul > li > ul > li > a::before {
+    content: url("../../public/icones/StreamlineBlockEntertainmentBooks.svg");
+}
